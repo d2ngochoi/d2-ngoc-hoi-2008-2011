@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D2 Ngọc Hồi (2008-2011) - 60 Năm Ngày Trở Về</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ================= CƠ BẢN & BIẾN MÀU ================= */
+        :root {
+            --primary: #800000; /* Đỏ đô */
+            --gold: #D4AF37; /* Vàng kim */
+            --blue: #1A365D; /* Xanh học đường */
+            --vintage: #FDFBF7; /* Giấy cũ/Ký ức */
+            --text-dark: #2C3E50;
+            --text-light: #5A6C7D;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--vintage);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .serif-text {
+            font-family: 'Lora', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        /* ================= HIỆU ỨNG FADE IN ================= */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= 1. HERO SECTION ================= */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(128, 0, 0, 0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(to top, var(--vintage), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-date {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #F0F0F0;
+        }
+
+        .hero-quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            font-family: 'Lora', serif;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(128, 0, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #A00000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(128, 0, 0, 0.5);
+        }
+
+        .btn-outline {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            border-color: var(--white);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ================= 2. COUNTDOWN SECTION ================= */
+        .countdown-wrapper {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--gold);
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 120px;
+        }
+
+        .countdown-number {
+            font-size: 4rem;
+            font-family: 'Lora', serif;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .countdown-message {
+            display: none;
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            font-family: 'Lora', serif;
+            font-weight: 600;
+        }
+
+        /* ================= 3 & 4. TEXT SECTIONS ================= */
+        .text-section {
+            background-color: var(--vintage);
+        }
+
+        .intro-box {
+            background: var(--white);
+            padding: 60px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border-left: 4px solid var(--blue);
+        }
+
+        .intro-box p {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .river-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .river-text p {
+            font-size: 1.15rem;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .river-card {
+            background: linear-gradient(135deg, var(--blue) 0%, #2A4A7F 100%);
+            border-radius: 20px;
+            padding: 60px 40px;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(26, 54, 93, 0.2);
+        }
+
+        .river-card::after {
+            content: '≈';
+            position: absolute;
+            font-size: 200px;
+            color: rgba(255,255,255,0.05);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: serif;
+        }
+
+        .river-card h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ================= 5. TIMELINE ================= */
+        .timeline-section {
+            background-color: var(--white);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item.left { left: 0; }
+        .timeline-item.right { left: 50%; }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--white);
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 30px;
+            background-color: var(--vintage);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .timeline-year {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* ================= 6 & 7. D2 SECTION & THỐNG KÊ ================= */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .stat-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .stat-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* ================= VIDEO SECTION CAO CẤP ================= */
+        .video-section {
+            background: linear-gradient(135deg, #1A365D 0%, #361010 100%);
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid var(--gold);
+            border-bottom: 3px solid var(--gold);
+            padding: 120px 0;
+        }
+
+        /* Hiệu ứng glow ánh sáng vàng nhẹ ở nền */
+        .video-section::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .video-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: 10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Đẩy nội dung lên trên hiệu ứng nền */
+        .video-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .video-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .video-label {
+            display: inline-block;
+            padding: 6px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            border-radius: 50px;
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        .video-section .section-title {
+            color: var(--white);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .video-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.15rem;
+            margin-bottom: 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+        }
+
+        /* Thiết kế Card Video Trắng Ngà tinh tế */
+        .video-card {
+            background: var(--vintage);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--gold);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Trick responsive iframe 16:9 */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background-color: #000;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-title {
+            font-family: 'Lora', serif;
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .video-desc {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            flex-grow: 1;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .btn-youtube {
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background-color: transparent;
+            color: var(--primary);
+            border: 1.5px solid var(--primary);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-youtube:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+            transform: translateX(5px); /* Hiệu ứng trượt nút nhẹ nhàng */
+        }
+
+        /* ================= 9. FORM & LỜI NHẮN ================= */
+        .form-section {
+            background-color: var(--vintage);
+            position: relative;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background-color: #F8FAFC;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: var(--white);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-submit:hover {
+            background-color: #A00000;
+        }
+
+        .spinner {
+            display: none;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ================= 10. DANH SÁCH LỜI NHẮN ================= */
+        .messages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .message-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--blue);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .msg-header {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #E2E8F0;
+        }
+
+        .msg-name {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .msg-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        .msg-content {
+            font-style: italic;
+            flex-grow: 1;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .msg-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            font-style: italic;
+            color: var(--text-light);
+            background: var(--white);
+            border-radius: 12px;
+        }
+
+        .loading-msgs {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-light);
+            grid-column: 1 / -1;
+        }
+
+        /* ================= 11. THƯ NGỎ & FOOTER ================= */
+        .letter-section {
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .letter-content {
+            max-width: 700px;
+            margin: 0 auto;
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+        }
+
+        .signature {
+            margin-top: 40px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        footer {
+            background-color: var(--blue);
+            color: rgba(255,255,255,0.8);
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-motto {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Toast Notification */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            font-weight: 500;
+        }
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 4.5s;
+        }
+        #toast.error {
+            background-color: #F44336;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media screen and (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.3rem; }
+            .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+            .btn { width: 100%; }
+            .river-grid { grid-template-columns: 1fr; gap: 40px; }
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 0; }
+            .timeline-item.right { left: 0; }
+            .timeline-item::after, .timeline-item.right::after { left: 21px; }
+            .form-row { grid-template-columns: 1fr; }
+            .countdown-wrapper { padding: 30px 20px; }
+            .countdown-container { gap: 20px; }
+            .countdown-number { font-size: 2.5rem; }
+            .countdown-item { min-width: 70px; }
+            .video-section { padding: 80px 0; }
+            .video-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <span class="hero-date">20 tháng 11 năm 2026</span>
+            <h1 class="hero-title">D2 Ngọc Hồi 2008 - 2011</h1>
+            <h2 class="hero-subtitle">Hướng về kỷ niệm 60 năm thành lập <br>Trường THPT Ngọc Hồi</h2>
+            <p class="hero-quote">"Có những dòng sông không chỉ chảy qua đất trời,<br>mà còn chảy mãi trong ký ức của một thế hệ học trò."</p>
+            <div class="hero-buttons">
+                <a href="#countdown" class="btn btn-primary">Đếm ngược đến ngày trở về</a>
+                <a href="#video-ky-niem" class="btn btn-outline">Xem video kỷ niệm</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="countdown">
+        <div class="countdown-wrapper fade-in">
+            <div class="countdown-container" id="countdown-timer">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Ngày</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Giờ</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Phút</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Giây</span>
+                </div>
+            </div>
+            <div class="countdown-message" id="countdown-message">
+                Chào mừng ngày kỷ niệm 60 năm thành lập Trường THPT Ngọc Hồi!
+            </div>
+        </div>
+    </div>
+
+    <section class="section text-section">
+        <div class="container fade-in">
+            <h2 class="section-title">Một trang nhỏ của cựu học sinh D2</h2>
+            <div class="intro-box">
+                <p>Xin chào, đây là một góc nhỏ được dựng lên bởi một cựu học sinh lớp D2, khóa 2008 - 2011.</p>
+                <p>Trang web này không phải là tiếng nói chính thức của nhà trường, mà đơn thuần là một trạm dừng chân của ký ức, được tạo ra để lưu giữ những tình cảm chân thành nhất hướng về mái trường THPT Ngọc Hồi thân thương.</p>
+                <p>Như một lời tri ân gửi đến các thế hệ thầy cô, một lời chào gửi đến những người bạn thanh xuân, và là một sự háo hức hướng về đại lễ 60 năm thành lập trường sắp tới.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="river-grid">
+                <div class="river-text fade-in">
+                    <h2 class="section-title" style="text-align: left;">Ngọc Hồi Như Một Dòng Sông</h2>
+                    <p>Mỗi mái trường dường như đều mang dáng dấp của một dòng sông. Có những người học trò chỉ đi qua dòng sông ấy ba năm ngắn ngủi, nhưng lớp phù sa của ký ức thì đọng lại cả một đời.</p>
+                    <p>THPT Ngọc Hồi đã âm thầm chảy qua biết bao thế hệ. Thời gian trôi đi, cảnh vật có thể đổi thay, những cô cậu học trò ngày nào giờ đã lớn lên, mỗi người rẽ sang một dòng chảy khác của cuộc đời.</p>
+                    <p>Nhưng với những người từng gắn bó nơi đây, ngày trở về không chỉ đơn thuần là việc bước lại vào cánh cổng trường cũ. Đó là khoảnh khắc ta được gặp lại một phần thanh xuân trong trẻo của chính mình. Dòng sông Ngọc Hồi ấy, vẫn sẽ chảy mãi trong miền ký ức không bao giờ phai nhạt.</p>
+                </div>
+                <div class="river-card fade-in">
+                    <h3>Dòng Chảy<br>Thời Gian</h3>
+                    <p style="position: relative; z-index: 2; margin-top: 20px;">Trôi đi để trưởng thành.<br>Trở về để nhớ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section timeline-section">
+        <div class="container">
+            <h2 class="section-title">Hành Trình Ký ỨC</h2>
+            <p class="section-subtitle">Những cột mốc thời gian đánh dấu sự khởi đầu và ngày gặp lại.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1966</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Thành lập Trường THPT Ngọc Hồi</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Viên gạch đầu tiên được đặt xuống, bắt đầu hành trình gieo hạt và ươm mầm cho biết bao thế hệ học trò vùng đất phía Nam Thủ đô.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2008 - 2011</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 10px;">D2 Ngọc Hồi - Khóa học thanh xuân</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Ba năm trôi qua dưới mái trường. Nơi cất giữ những bài kiểm tra, những giờ ra chơi rộn tiếng cười và những tình bạn đi theo năm tháng.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2026</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Kỷ niệm 60 năm thành lập</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">Sự kiện lớn hướng về cội nguồn. Là thời điểm để các thế hệ học trò cùng nhau trở về, nhìn lại chặng đường tự hào của mái trường xưa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section text-section" id="d2-memory">
+        <div class="container">
+            <h2 class="section-title">D2 Ngọc Hồi 2008 - 2011</h2>
+            <p class="section-subtitle">D2 không chỉ là tên gọi của một lớp học, mà là một phần ký ức của tuổi trẻ.</p>
+
+            <div class="stats-grid fade-in">
+                <div class="stat-card">
+                    <div class="stat-icon">🏫</div>
+                    <div class="stat-title">60 Năm</div>
+                    <div class="stat-desc">Thành lập THPT Ngọc Hồi</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🌸</div>
+                    <div class="stat-title">3 Năm</div>
+                    <div class="stat-desc">Thanh xuân dưới mái trường</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎓</div>
+                    <div class="stat-title">2008 - 2011</div>
+                    <div class="stat-desc">Một khóa học để nhớ</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✨</div>
+                    <div class="stat-title">20/11/2026</div>
+                    <div class="stat-desc">Ngày hội ngộ trở về</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section" id="video-ky-niem">
+        <div class="container">
+            <div class="video-header fade-in">
+                <div class="video-label">D2 Ngọc Hồi 2008 - 2011</div>
+                <h2 class="section-title">Video Kỷ Niệm D2 Ngọc Hồi</h2>
+                <p class="section-subtitle">Năm video nhỏ, năm mảnh ký ức được giữ lại từ một thời học trò. Có thể hình ảnh không còn sắc nét như hôm nay, nhưng mỗi khung hình đều là một phần thanh xuân rất thật của D2 Ngọc Hồi.</p>
+            </div>
+            
+            <div class="video-grid" id="video-container"></div>
+        </div>
+    </section>
+
+    <section class="section letter-section">
+        <div class="container fade-in">
+            <h2 class="section-title">Một Lời Hẹn Cho Ngày Trở Về</h2>
+            <div class="letter-content">
+                <p>Gửi những người bạn D2 Ngọc Hồi khóa 2008 - 2011,</p>
+                <p>Tháng 11 năm 2026 này, trường chúng ta tròn 60 tuổi. Nếu có thể thu xếp những bộn bề của cuộc sống, hãy cùng nhau nhìn về mái trường xưa.</p>
+                <p>Cuộc hội ngộ tới đây không chỉ đơn thuần là một buổi lễ kỷ niệm hoành tráng, mà là dịp để chúng ta tự nhắc nhớ rằng: Mình đã từng có một quãng đời vô tư và trong trẻo đến thế ở nơi này. Có những người bạn lâu lắm rồi chưa có dịp hàn huyên, nhưng tin tôi đi, chỉ cần nhắc lại tên lớp "D2", mọi khoảng cách của thời gian sẽ lập tức xóa nhòa, ký ức lại trở về rất gần.</p>
+                <p>Hẹn gặp lại nhau nhé, dưới tán cây của mái trường Ngọc Hồi!</p>
+                <div class="signature">Cựu học sinh D2</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section form-section" id="loi-nhan">
+        <div class="container">
+            <h2 class="section-title">Gửi Lời Nhắn Nhủ</h2>
+            <p class="section-subtitle">Để lại dòng tâm sự cho bạn bè D2, cho thầy cô, hoặc cho mái trường tuổi trẻ.</p>
+
+            <div class="form-container fade-in">
+                <form id="messageForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Họ và tên *</label>
+                            <input type="text" id="name" name="name" required placeholder="Vd: Nguyễn Văn A">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Sẽ được bảo mật">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Sẽ được bảo mật">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Hiện đang ở đâu</label>
+                            <input type="text" id="location" name="location" placeholder="Vd: Hà Nội, Nhật Bản...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Bạn là ai? *</label>
+                        <select id="role" name="role" required>
+                            <option value="">-- Chọn vai trò --</option>
+                            <option value="Cựu học sinh D2">Cựu học sinh D2</option>
+                            <option value="Cựu học sinh Ngọc Hồi">Cựu học sinh Ngọc Hồi khóa khác</option>
+                            <option value="Giáo viên">Giáo viên</option>
+                            <option value="Bạn bè / Khách mời">Bạn bè / Khách mời</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Lời nhắn gửi *</label>
+                        <textarea id="message" name="message" required placeholder="Viết những kỷ niệm, lời chúc hoặc tâm sự của bạn..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        Gửi Lời Nhắn <div class="spinner" id="spinner"></div>
+                    </button>
+                </form>
+            </div>
+
+            <div style="margin-top: 80px;">
+                <h3 class="serif-text" style="text-align: center; font-size: 2rem; color: var(--primary);">Những Dòng Chảy Ký Ức</h3>
+                <div class="messages-grid" id="messagesContainer">
+                    <div class="loading-msgs" id="msgLoading">Đang tải lời nhắn từ dòng sông ký ức...</div>
+                    </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">D2 Ngọc Hồi</div>
+            <div class="footer-motto">"Ngọc Hồi trong ký ức - D2 trong tim"</div>
+            <p style="margin-bottom: 20px;">Trang cá nhân của cựu học sinh D2 Ngọc Hồi khóa 2008 - 2011<br>Hướng về kỷ niệm 60 năm thành lập Trường THPT Ngọc Hồi (Năm 2026)</p>
+            <div class="disclaimer">
+                Trang web này là dự án cá nhân của cựu học sinh, được tạo ra với mục đích lưu giữ kỷ niệm và kết nối tình bạn.<br>Đây <strong>không phải</strong> là website chính thức của Trường THPT Ngọc Hồi.
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast">Thông báo ở đây</div>
+
+    <script>
+        // --- DATA YOUTUBE VIDEO (THEO ĐÚNG YÊU CẦU) ---
+        const memoryVideos = [
+            {
+                title: "Kỷ niệm 1",
+                youtubeId: "Hf_pa9obYCU",
+                description: "Một mảnh ký ức của D2 Ngọc Hồi."
+            },
+            {
+                title: "Kỷ niệm 2",
+                youtubeId: "mrcXmp50oCY",
+                description: "Những hình ảnh còn lại từ một thời học trò."
+            },
+            {
+                title: "Kỷ niệm 3",
+                youtubeId: "ouvM0PCMPzE",
+                description: "Thanh xuân đôi khi chỉ cần một đoạn video cũ để trở về."
+            },
+            {
+                title: "Kỷ niệm 4",
+                youtubeId: "cCSg6kANSBM",
+                description: "Một thời D2, một thời để nhớ."
+            },
+            {
+                title: "Kỷ niệm 5",
+                youtubeId: "mkD9Iw97HwU",
+                description: "Những khoảnh khắc giản dị nhưng rất quý."
+            }
+        ];
+
+        // --- 0. KHỞI TẠO DỮ LIỆU KHI TRANG LOAD ---
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // Render Video Youtube
+            renderYoutubeVideos();
+
+            // Setup Fade In Observer
+            setupFadeInObserver();
+
+            // Load tin nhắn từ Apps Script
+            loadMessages();
+        });
+
+        // Hàm render video động từ mảng memoryVideos
+        function renderYoutubeVideos() {
+            const container = document.getElementById('video-container');
+            if(!container) return;
+
+            let htmlContent = '';
+            
+            memoryVideos.forEach(vid => {
+                htmlContent += `
+                    <div class="video-card fade-in">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/${vid.youtubeId}" 
+                                title="${vid.title}" 
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4 class="video-title">${vid.title}</h4>
+                            <p class="video-desc">"${vid.description}"</p>
+                            <a href="https://www.youtube.com/watch?v=${vid.youtubeId}" target="_blank" class="btn-youtube">
+                                Xem trên YouTube
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = htmlContent;
+        }
+
+        // --- 1. LOGIC ĐẾM NGƯỢC (COUNTDOWN) ---
+        const countDownDate = new Date("2026-11-20T07:30:00+07:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown-timer").style.display = "none";
+                document.getElementById("countdown-message").style.display = "block";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }, 1000);
+
+
+        // --- 2. HIỆU ỨNG SCROLL FADE IN ---
+        function setupFadeInObserver() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+
+        // --- 3. XỬ LÝ FORM & GOOGLE SHEETS ---
+        const form = document.getElementById('messageForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const spinner = document.getElementById('spinner');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                location: document.getElementById('location').value,
+                role: document.getElementById('role').value,
+                message: document.getElementById('message').value
+            };
+
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.8';
+            spinner.style.display = 'inline-block';
+            submitBtn.childNodes[0].nodeValue = "Đang gửi đi... ";
+
+            if (typeof google !== 'undefined' && google.script) {
+                google.script.run
+                    .withSuccessHandler(onSuccess)
+                    .withFailureHandler(onError)
+                    .submitMessage(formData);
+            } else {
+                setTimeout(() => { onSuccess({status: "success", message: "Demo: Gửi thành công!"}); }, 1500);
+            }
+        });
+
+        function onSuccess(response) {
+            resetBtn();
+            if(response.status === "success") {
+                showToast(response.message, false);
+                form.reset();
+                if (typeof google !== 'undefined' && google.script) {
+                    loadMessages(); 
+                }
+            } else {
+                showToast(response.message, true);
+            }
+        }
+
+        function onError(error) {
+            resetBtn();
+            showToast("Không thể kết nối máy chủ. Vui lòng thử lại!", true);
+            console.error(error);
+        }
+
+        function resetBtn() {
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            spinner.style.display = 'none';
+            submitBtn.childNodes[0].nodeValue = "Gửi Lời Nhắn ";
+        }
+
+        // --- 4. TẢI VÀ HIỂN THỊ DANH SÁCH LỜI NHẮN ---
+        function loadMessages() {
+            document.getElementById('msgLoading').style.display = 'block';
+            if (typeof google !== 'undefined' && google.script) {
+                google.script.run
+                    .withSuccessHandler(renderMessages)
+                    .withFailureHandler(function(err){
+                        document.getElementById('msgLoading').innerText = "Không thể tải lời nhắn lúc này.";
+                    })
+                    .getMessages();
+            } else {
+                document.getElementById('msgLoading').innerText = "Demo: Đang chạy ở chế độ local, không kết nối Apps Script.";
+            }
+        }
+
+        function renderMessages(messages) {
+            const container = document.getElementById('messagesContainer');
+            container.innerHTML = ''; 
+
+            if (!messages || messages.length === 0) {
+                container.innerHTML = '<div class="msg-empty">Những lời nhắn đầu tiên đang chờ được viết...</div>';
+                return;
+            }
+
+            messages.forEach(msg => {
+                const card = document.createElement('div');
+                card.className = 'message-card fade-in visible';
+                
+                const safeName = msg.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                const safeRole = msg.role.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                const safeLoc = msg.location ? ` • ${msg.location.replace(/</g, "&lt;").replace(/>/g, "&gt;")}` : '';
+                const safeMsg = msg.message.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br>");
+
+                card.innerHTML = `
+                    <div class="msg-header">
+                        <div class="msg-name">${safeName}</div>
+                        <div class="msg-meta">${safeRole}${safeLoc} • ${msg.timestamp}</div>
+                    </div>
+                    <div class="msg-content">"${safeMsg}"</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // --- 5. HIỂN THỊ TOAST THÔNG BÁO ---
+        function showToast(msg, isError) {
+            const toast = document.getElementById("toast");
+            toast.innerText = msg;
+            toast.className = isError ? "show error" : "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 5000);
+        }
+    </script>
+</body>
+</html>
