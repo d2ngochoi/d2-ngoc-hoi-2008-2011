@@ -438,7 +438,6 @@
             padding: 120px 0;
         }
 
-        /* Hiệu ứng glow ánh sáng vàng nhẹ ở nền */
         .video-section::before {
             content: '';
             position: absolute;
@@ -465,7 +464,6 @@
             z-index: 0;
         }
 
-        /* Đẩy nội dung lên trên hiệu ứng nền */
         .video-section .container {
             position: relative;
             z-index: 2;
@@ -507,7 +505,6 @@
             gap: 40px;
         }
 
-        /* Thiết kế Card Video Trắng Ngà tinh tế */
         .video-card {
             background: var(--vintage);
             border-radius: 24px;
@@ -525,7 +522,6 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px rgba(212, 175, 55, 0.2);
         }
 
-        /* Trick responsive iframe 16:9 */
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
@@ -587,7 +583,7 @@
             background-color: var(--primary);
             color: var(--white);
             box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
-            transform: translateX(5px); /* Hiệu ứng trượt nút nhẹ nhàng */
+            transform: translateX(5px);
         }
 
         /* ================= 9. FORM & LỜI NHẮN ================= */
@@ -892,47 +888,25 @@
     <section class="section text-section">
         <div class="container fade-in">
             <h2 class="section-title">Một trang nhỏ của cựu học sinh D2</h2>
-           <div style="display:flex; justify-content:center; margin:18px 0 24px;">
-  <img 
-    src="./avatar.png?v=3" 
-    alt="D2 Ngọc Hồi Avatar"
-    style="
-      width:90px;
-      height:90px;
-      border-radius:50%;
-      object-fit:cover;
-      border:4px solid #d4af37;
-      box-shadow:0 12px 28px rgba(0,0,0,0.25);
-      background:#fff;
-      display:block;
-    "
-  >
-</div>
+            <div style="display:flex; justify-content:center; margin:18px 0 24px;">
+                <img 
+                    src="./avatar.png?v=3" 
+                    alt="D2 Ngọc Hồi Avatar"
+                    style="width:90px; height:90px; border-radius:50%; object-fit:cover; border:4px solid #d4af37; box-shadow:0 12px 28px rgba(0,0,0,0.25); background:#fff; display:block;"
+                >
+            </div>
             <div class="intro-box">
                 <p>Xin chào, đây là một góc nhỏ được dựng lên bởi một cựu học sinh lớp D2, khóa 2008 - 2011.</p>
                 <p>Trang web này không phải là tiếng nói chính thức của nhà trường, mà đơn thuần là một trạm dừng chân của ký ức, được tạo ra để lưu giữ những tình cảm chân thành nhất hướng về mái trường THPT Ngọc Hồi thân thương.</p>
                 <p>Như một lời tri ân gửi đến các thế hệ thầy cô, một lời chào gửi đến những người bạn thanh xuân, và là một sự háo hức hướng về đại lễ 60 năm thành lập trường sắp tới.</p>
             </div>
-            <div style="
-  width:min(92%, 860px);
-  margin:28px auto 0;
-  border-radius:18px;
-  overflow:hidden;
-  border:2px solid rgba(212,175,55,0.65);
-  box-shadow:0 18px 45px rgba(0,0,0,0.26);
-  background:#7a0f16;
-">
-  <img 
-    src="./banner.png?v=3" 
-    alt="D2 Ngọc Hồi Banner"
-    style="
-      width:100%;
-      height:auto;
-      display:block;
-      object-fit:contain;
-    "
-  >
-</div>
+            <div style="width:min(92%, 860px); margin:28px auto 0; border-radius:18px; overflow:hidden; border:2px solid rgba(212,175,55,0.65); box-shadow:0 18px 45px rgba(0,0,0,0.26); background:#7a0f16;">
+                <img 
+                    src="./banner.png?v=3" 
+                    alt="D2 Ngọc Hồi Banner"
+                    style="width:100%; height:auto; display:block; object-fit:contain;"
+                >
+            </div>
         </div>
     </section>
 
@@ -1047,18 +1021,14 @@
             <p class="section-subtitle">Để lại dòng tâm sự cho bạn bè D2, cho thầy cô, hoặc cho mái trường tuổi trẻ.</p>
 
             <div class="form-container fade-in">
-                <iframe 
-  name="hidden_iframe" 
-  id="hidden_iframe" 
-  style="display:none;">
-</iframe>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
-<form
-  id="messageForm"
-  method="POST"
-  action="https://script.google.com/macros/s/AKfycbymLtmJELGKoE2RCqPFuD9B6uWkIKLaJFRmRZRNPyD9JfI6sPpFhWsTwB37PqttVKk8/exec"
-  target="hidden_iframe"
->                    
+                <form
+                    id="messageForm"
+                    method="POST"
+                    action="https://script.google.com/macros/s/AKfycbymLtmJELGKoE2RCqPFuD9B6uWkIKLaJFRmRZRNPyD9JfI6sPpFhWsTwB37PqttVKk8/exec"
+                    target="hidden_iframe"
+                >                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Họ và tên *</label>
@@ -1100,28 +1070,17 @@
                     <button type="submit" class="btn-submit" id="submitBtn">
                         Gửi Lời Nhắn <div class="spinner" id="spinner"></div>
                     </button>
-                    <div id="formNotice" style="display:none; margin-top:18px; padding:14px 18px; border-radius:14px; background:#fff8dd; color:#7a0f16; border:1px solid rgba(212,175,55,0.65); font-weight:600; text-align:center;">
-</div>
-    <div id="formNotice" style="
-display:none;
-margin-top:20px;
-padding:14px;
-border-radius:12px;
-background:#fff8dd;
-color:#7a0f16;
-border:1px solid #d4af37;
-font-weight:600;
-text-align:center;
-">
-</div>
+                    
+                    <div id="formNotice" style="display:none; margin-top:20px; padding:14px; border-radius:12px; background:#fff8dd; color:#7a0f16; border:1px solid #d4af37; font-weight:600; text-align:center;">
+                    </div>
                 </form>
             </div>
 
             <div style="margin-top: 80px;">
                 <h3 class="serif-text" style="text-align: center; font-size: 2rem; color: var(--primary);">Những Dòng Chảy Ký Ức</h3>
                 <div class="messages-grid" id="messagesContainer">
-                    <div class="loading-msgs" id="msgLoading">Đang tải lời nhắn từ dòng sông ký ức...</div>
-                    </div>
+                    <div class="loading-msgs" id="msgLoading">Danh sách lời nhắn đang được cập nhật trên nền tảng mới...</div>
+                </div>
             </div>
 
         </div>
@@ -1138,58 +1097,33 @@ text-align:center;
         </div>
     </footer>
 
-    <div id="toast">Thông báo ở đây</div>
-
     <script>
-        // --- DATA YOUTUBE VIDEO (THEO ĐÚNG YÊU CẦU) ---
+        // --- 0. DỮ LIỆU VIDEO YOUTUBE ---
         const memoryVideos = [
-            {
-                title: "Kỷ niệm 1",
-                youtubeId: "Hf_pa9obYCU",
-                description: "Một mảnh ký ức của D2 Ngọc Hồi."
-            },
-            {
-                title: "Kỷ niệm 2",
-                youtubeId: "mrcXmp50oCY",
-                description: "Những hình ảnh còn lại từ một thời học trò."
-            },
-            {
-                title: "Kỷ niệm 3",
-                youtubeId: "ouvM0PCMPzE",
-                description: "Thanh xuân đôi khi chỉ cần một đoạn video cũ để trở về."
-            },
-            {
-                title: "Kỷ niệm 4",
-                youtubeId: "cCSg6kANSBM",
-                description: "Một thời D2, một thời để nhớ."
-            },
-            {
-                title: "Kỷ niệm 5",
-                youtubeId: "mkD9Iw97HwU",
-                description: "Những khoảnh khắc giản dị nhưng rất quý."
-            }
+            { title: "Kỷ niệm 1", youtubeId: "Hf_pa9obYCU", description: "Một mảnh ký ức của D2 Ngọc Hồi." },
+            { title: "Kỷ niệm 2", youtubeId: "mrcXmp50oCY", description: "Những hình ảnh còn lại từ một thời học trò." },
+            { title: "Kỷ niệm 3", youtubeId: "ouvM0PCMPzE", description: "Thanh xuân đôi khi chỉ cần một đoạn video cũ để trở về." },
+            { title: "Kỷ niệm 4", youtubeId: "cCSg6kANSBM", description: "Một thời D2, một thời để nhớ." },
+            { title: "Kỷ niệm 5", youtubeId: "mkD9Iw97HwU", description: "Những khoảnh khắc giản dị nhưng rất quý." }
         ];
 
-        // --- 0. KHỞI TẠO DỮ LIỆU KHI TRANG LOAD ---
         document.addEventListener("DOMContentLoaded", function() {
-            
-            // Render Video Youtube
+            // Hiển thị Video
             renderYoutubeVideos();
-
-            // Setup Fade In Observer
+            
+            // Cài đặt hiệu ứng cuộn trang (Fade In)
             setupFadeInObserver();
-
-            // Load tin nhắn từ Apps Script
-            loadMessages();
+            
+            // Xử lý gửi Form lên Google Sheets qua iFrame ẩn
+            setupFormHandler();
         });
 
-        // Hàm render video động từ mảng memoryVideos
+        // --- 1. RENDER YOUTUBE VIDEOS ---
         function renderYoutubeVideos() {
             const container = document.getElementById('video-container');
             if(!container) return;
 
             let htmlContent = '';
-            
             memoryVideos.forEach(vid => {
                 htmlContent += `
                     <div class="video-card fade-in">
@@ -1213,11 +1147,10 @@ text-align:center;
                     </div>
                 `;
             });
-
             container.innerHTML = htmlContent;
         }
 
-        // --- 1. LOGIC ĐẾM NGƯỢC (COUNTDOWN) ---
+        // --- 2. LOGIC ĐẾM NGƯỢC ---
         const countDownDate = new Date("2026-11-20T07:30:00+07:00").getTime();
         const x = setInterval(function() {
             const now = new Date().getTime();
@@ -1241,15 +1174,9 @@ text-align:center;
             document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
         }, 1000);
 
-
-        // --- 2. HIỆU ỨNG SCROLL FADE IN ---
+        // --- 3. HIỆU ỨNG CUỘN FADE IN ---
         function setupFadeInObserver() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1259,130 +1186,47 @@ text-align:center;
                 });
             }, observerOptions);
 
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // --- 4. XỬ LÝ GỬI FORM LÊN GOOGLE SHEETS TỪ GITHUB ---
+        function setupFormHandler() {
+            const form = document.getElementById('messageForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('spinner');
+            const notice = document.getElementById('formNotice');
+
+            if (!form) return;
+
+            form.addEventListener('submit', function () {
+                // UI Loading state
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.style.opacity = '0.75';
+                    submitBtn.style.cursor = 'not-allowed';
+                }
+                if (spinner) spinner.style.display = 'inline-block';
+
+                // Giả lập thời gian chờ để iFrame ẩn thực hiện POST request
+                setTimeout(function () {
+                    if (notice) {
+                        notice.style.display = 'block';
+                        notice.innerHTML = 'Cảm ơn bạn. Lời nhắn đã được gửi về dòng ký ức D2 Ngọc Hồi.';
+                    }
+                    
+                    form.reset();
+
+                    // Khôi phục UI nút bấm
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                        submitBtn.style.cursor = 'pointer';
+                    }
+                    if (spinner) spinner.style.display = 'none';
+
+                }, 1500);
             });
-        }
-
-        <script>
-document.getElementById("messageForm").addEventListener("submit", function () {
-    const submitBtn = document.getElementById("submitBtn");
-    const spinner = document.getElementById("spinner");
-    const notice = document.getElementById("formNotice");
-
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = "0.8";
-    spinner.style.display = "inline-block";
-
-    setTimeout(function () {
-        spinner.style.display = "none";
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = "1";
-
-        if (notice) {
-            notice.style.display = "block";
-            notice.innerHTML = "Cảm ơn bạn! Lời nhắn đã được gửi về D2 Ngọc Hồi.";
-        }
-
-        document.getElementById("messageForm").reset();
-    }, 1500);
-});
-</script>
-
-        // --- 4. TẢI VÀ HIỂN THỊ DANH SÁCH LỜI NHẮN ---
-        function loadMessages() {
-            document.getElementById('msgLoading').style.display = 'block';
-            if (typeof google !== 'undefined' && google.script) {
-                google.script.run
-                    .withSuccessHandler(renderMessages)
-                    .withFailureHandler(function(err){
-                        document.getElementById('msgLoading').innerText = "Không thể tải lời nhắn lúc này.";
-                    })
-                    .getMessages();
-            } else {
-                document.getElementById('msgLoading').innerText = "Demo: Đang chạy ở chế độ local, không kết nối Apps Script.";
-            }
-        }
-
-        function renderMessages(messages) {
-            const container = document.getElementById('messagesContainer');
-            container.innerHTML = ''; 
-
-            if (!messages || messages.length === 0) {
-                container.innerHTML = '<div class="msg-empty">Những lời nhắn đầu tiên đang chờ được viết...</div>';
-                return;
-            }
-
-            messages.forEach(msg => {
-                const card = document.createElement('div');
-                card.className = 'message-card fade-in visible';
-                
-                const safeName = msg.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                const safeRole = msg.role.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                const safeLoc = msg.location ? ` • ${msg.location.replace(/</g, "&lt;").replace(/>/g, "&gt;")}` : '';
-                const safeMsg = msg.message.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br>");
-
-                card.innerHTML = `
-                    <div class="msg-header">
-                        <div class="msg-name">${safeName}</div>
-                        <div class="msg-meta">${safeRole}${safeLoc} • ${msg.timestamp}</div>
-                    </div>
-                    <div class="msg-content">"${safeMsg}"</div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        // --- 5. HIỂN THỊ TOAST THÔNG BÁO ---
-        function showToast(msg, isError) {
-            const toast = document.getElementById("toast");
-            toast.innerText = msg;
-            toast.className = isError ? "show error" : "show";
-            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 5000);
         }
     </script>
-
-    <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('messageForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const spinner = document.getElementById('spinner');
-    const notice = document.getElementById('formNotice');
-
-    if (!form) return;
-
-    form.addEventListener('submit', function () {
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = '0.75';
-        submitBtn.style.cursor = 'not-allowed';
-      }
-
-      if (spinner) {
-        spinner.style.display = 'inline-block';
-      }
-
-      setTimeout(function () {
-        if (notice) {
-          notice.style.display = 'block';
-          notice.innerHTML = 'Cảm ơn bạn. Lời nhắn đã được gửi về dòng ký ức D2 Ngọc Hồi.';
-        }
-
-        form.reset();
-
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.style.opacity = '1';
-          submitBtn.style.cursor = 'pointer';
-        }
-
-        if (spinner) {
-          spinner.style.display = 'none';
-        }
-      }, 1500);
-    });
-  });
-</script>
-    
 </body>
 </html>
