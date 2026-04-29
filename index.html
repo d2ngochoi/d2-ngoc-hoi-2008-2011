@@ -1047,7 +1047,18 @@
             <p class="section-subtitle">Để lại dòng tâm sự cho bạn bè D2, cho thầy cô, hoặc cho mái trường tuổi trẻ.</p>
 
             <div class="form-container fade-in">
-                <form id="messageForm">
+                <iframe 
+  name="hidden_iframe" 
+  id="hidden_iframe" 
+  style="display:none;">
+</iframe>
+
+<form
+  id="messageForm"
+  method="POST"
+  action="https://script.google.com/macros/s/AKfycbymLtmJELGKoE2RCqPFuD9B6uWkIKLaJFRmRZRNPyD9JfI6sPpFhWsTwB37PqttVKk8/exec"
+  target="hidden_iframe"
+>                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Họ và tên *</label>
@@ -1089,6 +1100,20 @@
                     <button type="submit" class="btn-submit" id="submitBtn">
                         Gửi Lời Nhắn <div class="spinner" id="spinner"></div>
                     </button>
+                    <div id="formNotice" style="display:none; margin-top:18px; padding:14px 18px; border-radius:14px; background:#fff8dd; color:#7a0f16; border:1px solid rgba(212,175,55,0.65); font-weight:600; text-align:center;">
+</div>
+    <div id="formNotice" style="
+display:none;
+margin-top:20px;
+padding:14px;
+border-radius:12px;
+background:#fff8dd;
+color:#7a0f16;
+border:1px solid #d4af37;
+font-weight:600;
+text-align:center;
+">
+</div>
                 </form>
             </div>
 
@@ -1239,64 +1264,30 @@
             });
         }
 
+        <script>
+document.getElementById("messageForm").addEventListener("submit", function () {
+    const submitBtn = document.getElementById("submitBtn");
+    const spinner = document.getElementById("spinner");
+    const notice = document.getElementById("formNotice");
 
-        // --- 3. XỬ LÝ FORM & GOOGLE SHEETS ---
-        const form = document.getElementById('messageForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const spinner = document.getElementById('spinner');
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = "0.8";
+    spinner.style.display = "inline-block";
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                location: document.getElementById('location').value,
-                role: document.getElementById('role').value,
-                message: document.getElementById('message').value
-            };
+    setTimeout(function () {
+        spinner.style.display = "none";
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = "1";
 
-            submitBtn.disabled = true;
-            submitBtn.style.opacity = '0.8';
-            spinner.style.display = 'inline-block';
-            submitBtn.childNodes[0].nodeValue = "Đang gửi đi... ";
-
-            if (typeof google !== 'undefined' && google.script) {
-                google.script.run
-                    .withSuccessHandler(onSuccess)
-                    .withFailureHandler(onError)
-                    .submitMessage(formData);
-            } else {
-                setTimeout(() => { onSuccess({status: "success", message: "Demo: Gửi thành công!"}); }, 1500);
-            }
-        });
-
-        function onSuccess(response) {
-            resetBtn();
-            if(response.status === "success") {
-                showToast(response.message, false);
-                form.reset();
-                if (typeof google !== 'undefined' && google.script) {
-                    loadMessages(); 
-                }
-            } else {
-                showToast(response.message, true);
-            }
+        if (notice) {
+            notice.style.display = "block";
+            notice.innerHTML = "Cảm ơn bạn! Lời nhắn đã được gửi về D2 Ngọc Hồi.";
         }
 
-        function onError(error) {
-            resetBtn();
-            showToast("Không thể kết nối máy chủ. Vui lòng thử lại!", true);
-            console.error(error);
-        }
-
-        function resetBtn() {
-            submitBtn.disabled = false;
-            submitBtn.style.opacity = '1';
-            spinner.style.display = 'none';
-            submitBtn.childNodes[0].nodeValue = "Gửi Lời Nhắn ";
-        }
+        document.getElementById("messageForm").reset();
+    }, 1500);
+});
+</script>
 
         // --- 4. TẢI VÀ HIỂN THỊ DANH SÁCH LỜI NHẮN ---
         function loadMessages() {
@@ -1350,5 +1341,48 @@
             setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 5000);
         }
     </script>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('messageForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const spinner = document.getElementById('spinner');
+    const notice = document.getElementById('formNotice');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function () {
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.75';
+        submitBtn.style.cursor = 'not-allowed';
+      }
+
+      if (spinner) {
+        spinner.style.display = 'inline-block';
+      }
+
+      setTimeout(function () {
+        if (notice) {
+          notice.style.display = 'block';
+          notice.innerHTML = 'Cảm ơn bạn. Lời nhắn đã được gửi về dòng ký ức D2 Ngọc Hồi.';
+        }
+
+        form.reset();
+
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+          submitBtn.style.cursor = 'pointer';
+        }
+
+        if (spinner) {
+          spinner.style.display = 'none';
+        }
+      }, 1500);
+    });
+  });
+</script>
+    
 </body>
 </html>
