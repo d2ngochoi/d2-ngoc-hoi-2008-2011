@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Quy trình kết nối lớp D2 Ngọc Hồi 2008–2011 trong dịp kỷ niệm 60 năm thành lập trường: rõ ràng, nhẹ nhàng, dễ theo dõi." />
+  <meta name="theme-color" content="#fff7ea" />
+  <title>Quy trình kết nối lớp D2 | D2 Ngọc Hồi 2008–2011</title>
+
+  <style>
+    :root {
+      --bg: #fff8ec;
+      --paper: #fffdf8;
+      --ink: #123866;
+      --text: #3b2b22;
+      --muted: #75695f;
+      --green: #6f9b63;
+      --orange: #f2b13d;
+      --coral: #e66f4f;
+      --blue: #6ca8d9;
+      --purple: #b99ae6;
+      --teal: #65b7b2;
+      --cream: #fff3d7;
+      --line: rgba(111, 155, 99, 0.38);
+      --shadow: 0 22px 58px rgba(31, 54, 82, 0.15);
+      --soft-shadow: 0 10px 28px rgba(31, 54, 82, 0.10);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(242, 177, 61, 0.20), transparent 30%),
+        radial-gradient(circle at 91% 12%, rgba(246, 181, 191, 0.25), transparent 31%),
+        radial-gradient(circle at 78% 86%, rgba(108, 168, 217, 0.16), transparent 30%),
+        linear-gradient(180deg, #fffaf1 0%, #fff6e8 100%);
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img,
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1,
+    h2,
+    p,
+    small,
+    strong,
+    a {
+      overflow-wrap: break-word;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -44px;
+      left: 16px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    .page-shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 26px auto 56px;
+      position: relative;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .back-home,
+    .nav-chip {
+      border-radius: 999px;
+      padding: 11px 16px;
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(31, 54, 82, 0.11);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 100%;
+      line-height: 1.35;
+    }
+
+    .back-home:hover,
+    .nav-chip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 54, 82, 0.17);
+      background: #fff;
+    }
+
+    .hero-note {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 18px;
+      padding: 18px 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: var(--soft-shadow);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      display: grid;
+      gap: 8px;
+    }
+
+    .hero-note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(15px, 1.7vw, 18px);
+      line-height: 1.65;
+    }
+
+    .mini-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 0 0 18px;
+    }
+
+    .poster {
+      position: relative;
+      background: linear-gradient(180deg, var(--paper), #fff8ee);
+      border-radius: 38px;
+      padding: clamp(22px, 4vw, 54px);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(111, 155, 99, 0.18);
+      overflow: hidden;
+    }
+
+    .poster::before,
+    .poster::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      filter: blur(8px);
+      opacity: 0.26;
+      pointer-events: none;
+    }
+
+    .poster::before {
+      top: -132px;
+      right: -92px;
+      background: #f7b7bd;
+    }
+
+    .poster::after {
+      bottom: -122px;
+      left: -100px;
+      background: #9bd5ce;
+    }
+
+    .header {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      color: var(--coral);
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 13px;
+      line-height: 1.4;
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "✦";
+      color: var(--orange);
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 0 auto;
+      color: var(--ink);
+      font-size: clamp(34px, 6.4vw, 74px);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      margin: 14px auto 0;
+      max-width: 880px;
+      color: var(--coral);
+      font-size: clamp(23px, 3.8vw, 42px);
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .section-label {
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 auto 18px;
+      padding: 12px 30px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--green);
+      font-weight: 900;
+      font-size: clamp(18px, 2.2vw, 26px);
+      letter-spacing: 0.01em;
+      line-height: 1.3;
+      box-shadow: 0 10px 24px rgba(111, 155, 99, 0.24);
+      text-align: center;
+    }
+
+    .purpose-box,
+    .common-box,
+    .outcome-box,
+    .closing-box {
+      position: relative;
+      z-index: 1;
+      border: 3px dashed var(--line);
+      border-radius: var(--radius);
+      padding: 30px 24px 24px;
+      background: rgba(255, 255, 255, 0.64);
+    }
+
+    .purpose-box,
+    .common-box {
+      margin: 0 0 32px;
+    }
+
+    .purpose-grid,
+    .common-grid,
+    .outcome-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .purpose-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .common-grid,
+    .outcome-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .purpose-item,
+    .common-item,
+    .outcome {
+      min-width: 0;
+      text-align: center;
+      padding: 14px 10px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.58);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .purpose-item:hover,
+    .common-item:hover,
+    .outcome:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.86);
+    }
+
+    .icon-circle {
+      width: 86px;
+      height: 86px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 12px;
+      border-radius: 28px;
+      font-size: 42px;
+      line-height: 1;
+      background: #fff2c6;
+      box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.04);
+    }
+
+    .purpose-item:nth-child(2) .icon-circle,
+    .common-item:nth-child(2) .icon-circle {
+      background: #dff0d8;
+    }
+
+    .purpose-item:nth-child(3) .icon-circle,
+    .common-item:nth-child(3) .icon-circle {
+      background: #ffe0dd;
+    }
+
+    .common-item:nth-child(4) .icon-circle {
+      background: #dcecff;
+    }
+
+    .purpose-item strong,
+    .common-item p,
+    .outcome strong {
+      margin: 0;
+      font-size: clamp(16px, 1.8vw, 21px);
+      line-height: 1.4;
+      font-weight: 800;
+      display: block;
+    }
+
+    .purpose-item small {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .timeline {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 16px;
+      margin: 8px 0 34px;
+    }
+
+    .step {
+      --accent: var(--orange);
+      display: grid;
+      grid-template-columns: 72px 130px minmax(0, 1fr) 92px;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 22px 14px 0;
+      border-radius: 24px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.88), rgba(255,255,255,0.60));
+      box-shadow: 0 8px 22px rgba(31, 54, 82, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      overflow: visible;
+      transform: translateY(18px);
+      opacity: 0;
+      transition: transform 0.55s ease, opacity 0.55s ease, box-shadow 0.25s ease;
+    }
+
+    .step.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .step:hover {
+      box-shadow: 0 14px 30px rgba(31, 54, 82, 0.14);
+    }
+
+    .step:nth-child(2) { --accent: var(--green); }
+    .step:nth-child(3) { --accent: var(--blue); }
+    .step:nth-child(4) { --accent: var(--purple); }
+    .step:nth-child(5) { --accent: #ec9650; }
+    .step:nth-child(6) { --accent: var(--teal); }
+    .step:nth-child(7) { --accent: #ef8997; }
+    .step:nth-child(8) { --accent: #6fa8dc; }
+
+    .number-wrap {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      height: 100%;
+      align-items: center;
+    }
+
+    .number-wrap::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 70%;
+      bottom: -32px;
+      width: 3px;
+      transform: translateX(-50%);
+      background: repeating-linear-gradient(to bottom, var(--accent), var(--accent) 8px, transparent 8px, transparent 16px);
+      opacity: 0.55;
+    }
+
+    .step:last-child .number-wrap::after {
+      display: none;
+    }
+
+    .number {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 900;
+      font-size: 30px;
+      line-height: 1;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .step-art {
+      width: 124px;
+      height: 96px;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      background: #fff3d7;
+      font-size: 52px;
+      line-height: 1;
+      box-shadow: inset 0 -8px 0 rgba(0, 0, 0, 0.04);
+    }
+
+    .step:nth-child(2) .step-art { background: #e7f4df; }
+    .step:nth-child(3) .step-art { background: #dcecff; }
+    .step:nth-child(4) .step-art { background: #eee2ff; }
+    .step:nth-child(5) .step-art { background: #ffe6cf; }
+    .step:nth-child(6) .step-art { background: #dff2ef; }
+    .step:nth-child(7) .step-art { background: #ffe1e7; }
+    .step:nth-child(8) .step-art { background: #dcecff; }
+
+    .step-content {
+      min-width: 0;
+    }
+
+    .step h2 {
+      margin: 0 0 6px;
+      font-size: clamp(22px, 2.8vw, 33px);
+      line-height: 1.18;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(16px, 1.75vw, 21px);
+      line-height: 1.5;
+    }
+
+    .side-icon {
+      font-size: 50px;
+      line-height: 1;
+      text-align: center;
+      opacity: 0.95;
+    }
+
+    .outcome-box {
+      margin-bottom: 24px;
+    }
+
+    .outcome .icon-circle {
+      width: 82px;
+      height: 82px;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .closing-box {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+      border-style: solid;
+      border-width: 1px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .closing-box h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.25;
+    }
+
+    .closing-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .quick-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .quick-links a {
+      border-radius: 999px;
+      padding: 10px 14px;
+      background: var(--cream);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      line-height: 1.35;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .quick-links a:hover {
+      transform: translateY(-2px);
+      background: #ffe8b0;
+    }
+
+    .small-note {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .floating {
+      position: absolute;
+      z-index: 0;
+      font-size: 26px;
+      line-height: 1;
+      opacity: 0.7;
+      animation: float 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .f1 { top: 88px; right: 60px; animation-delay: 0s; }
+    .f2 { top: 105px; left: 70px; animation-delay: 1s; }
+    .f3 { bottom: 132px; right: 64px; animation-delay: 0.6s; }
+    .f4 { bottom: 126px; left: 58px; animation-delay: 1.4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(5deg); }
+    }
+
+    @media (max-width: 900px) {
+      .purpose-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .common-grid,
+      .outcome-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .step {
+        grid-template-columns: 58px 92px minmax(0, 1fr);
+        padding: 12px 14px 12px 0;
+      }
+
+      .step-art {
+        width: 88px;
+        height: 82px;
+        font-size: 40px;
+        border-radius: 20px;
+      }
+
+      .side-icon {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page-shell {
+        width: min(100% - 20px, 1120px);
+        margin-top: 14px;
+      }
+
+      .topbar {
+        justify-content: center;
+      }
+
+      .back-home,
+      .nav-chip {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px 13px;
+        white-space: normal;
+      }
+
+      .hero-note {
+        padding: 16px 14px;
+      }
+
+      .poster {
+        border-radius: 28px;
+        padding: 22px 14px 26px;
+      }
+
+      h1 {
+        font-size: clamp(30px, 11vw, 44px);
+        line-height: 1.12;
+        letter-spacing: -0.015em;
+      }
+
+      .subtitle {
+        font-size: clamp(21px, 7vw, 30px);
+      }
+
+      .purpose-box,
+      .common-box,
+      .outcome-box,
+      .closing-box {
+        padding: 24px 12px 16px;
+        border-radius: 22px;
+      }
+
+      .common-grid,
+      .outcome-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 10px;
+        padding: 14px 12px 14px 0;
+      }
+
+      .step-art {
+        grid-column: 2;
+        width: 76px;
+        height: 70px;
+        font-size: 34px;
+        margin-bottom: 2px;
+      }
+
+      .step-content {
+        grid-column: 2;
+      }
+
+      .number {
+        width: 48px;
+        height: 48px;
+        font-size: 25px;
+      }
+
+      .number-wrap {
+        grid-row: 1 / span 2;
+      }
+
+      .floating {
+        display: none;
+      }
+
+      .quick-links a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .page-shell {
+        width: min(100% - 12px, 1120px);
+      }
+
+      .poster {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .section-label {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .topbar,
+      .mini-nav,
+      .skip-link {
+        display: none !important;
+      }
+
+      .page-shell {
+        width: 100%;
+        margin: 0;
+      }
+
+      .poster {
+        box-shadow: none;
+        border-radius: 0;
+        border: 0;
+      }
+
+      .hero-note,
+      .step,
+      .purpose-item,
+      .common-item,
+      .outcome {
+        box-shadow: none;
+      }
+
+      .step {
+        opacity: 1;
+        transform: none;
+        break-inside: avoid;
+      }
+
+      .closing-box {
+        break-inside: avoid;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .step {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Bỏ qua phần đầu</a>
+
+  <main class="page-shell" id="top">
+    <div class="topbar">
+      <a class="back-home" href="https://d2ngochoi.github.io/d2-ngoc-hoi-2008-2011/">← Về trang chính D2</a>
+    </div>
+
+    <section class="hero-note" aria-label="Giới thiệu ngắn">
+      <p>
+        Đây là một góc nhỏ để lớp mình cùng nhìn lại cách kết nối, rủ nhau trở về trong dịp kỷ niệm 60 năm thành lập trường.
+      </p>
+      <p>
+        Mọi thứ không cần quá cầu kỳ, chỉ cần rõ ràng một chút, nhẹ nhàng một chút, để nhiều bạn dễ sắp xếp và gặp lại nhau vui hơn.
+      </p>
+    </section>
+
+    <nav class="mini-nav" aria-label="Liên kết trong trang">
+      <a class="nav-chip" href="#muc-dich">Trang này để làm gì?</a>
+      <a class="nav-chip" href="#quy-trinh">8 bước kết nối</a>
+      <a class="nav-chip" href="#huong-toi">Điều mình hướng tới</a>
+    </nav>
+
+    <article class="poster" id="content">
+      <span class="floating f1">♡</span>
+      <span class="floating f2">✦</span>
+      <span class="floating f3">✈</span>
+      <span class="floating f4">📷</span>
+
+      <header class="header">
+        <div class="eyebrow">D2 Ngọc Hồi 2008–2011</div>
+        <h1>Quy trình kết nối lớp D2</h1>
+        <p class="subtitle">Kỷ niệm 60 năm thành lập trường</p>
+      </header>
+
+      <section class="purpose-box" id="muc-dich" aria-labelledby="purpose-title">
+        <div class="section-label" id="purpose-title">Trang này để làm gì?</div>
+        <div class="purpose-grid">
+          <div class="purpose-item">
+            <div class="icon-circle">📌</div>
+            <strong>Dễ theo dõi</strong>
+            <small>Các việc cần làm được đặt cùng một chỗ.</small>
+          </div>
+          <div class="purpose-item">
+            <div class="icon-circle">🗓️</div>
+            <strong>Dễ chọn ngày</strong>
+            <small>Cả lớp cùng nhìn được hướng đi chung.</small>
+          </div>
+          <div class="purpose-item">
+            <div class="icon-circle">💬</div>
+            <strong>Đỡ trôi tin nhắn</strong>
+            <small>Ai vào sau cũng có thể nắm nhanh nội dung.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="common-box" aria-labelledby="common-title">
+        <div class="section-label" id="common-title">Cách làm chung</div>
+        <div class="common-grid">
+          <div class="common-item">
+            <div class="icon-circle">📋</div>
+            <p>Biết thông tin chính xác trước rồi mới hẹn nhau</p>
+          </div>
+          <div class="common-item">
+            <div class="icon-circle">💬</div>
+            <p>Cùng hỏi ý kiến để chọn ngày đông vui nhất</p>
+          </div>
+          <div class="common-item">
+            <div class="icon-circle">🤝</div>
+            <p>Ai tiện phần nào thì cùng phụ một tay</p>
+          </div>
+          <div class="common-item">
+            <div class="icon-circle">😊</div>
+            <p>Mọi việc làm nhẹ nhàng, vui là chính</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="timeline" id="quy-trinh" aria-label="8 bước kết nối lớp">
+        <div class="step">
+          <div class="number-wrap"><div class="number">1</div></div>
+          <div class="step-art">🏫</div>
+          <div class="step-content">
+            <h2>Nghe thông tin từ trường</h2>
+            <p>Nắm rõ ngày giờ, địa điểm, chương trình và những việc lớp mình cần biết.</p>
+          </div>
+          <div class="side-icon">📣</div>
+        </div>
+
+        <div class="step">
+          <div class="number-wrap"><div class="number">2</div></div>
+          <div class="step-art">👥</div>
+          <div class="step-content">
+            <h2>Cùng nhau phụ một tay</h2>
+            <p>Bạn nào tiện thì hỗ trợ thêm người vào nhóm, nhắc bình chọn, góp ý địa điểm.</p>
+          </div>
+          <div class="side-icon">👏</div>
+        </div>
+
+        <div class="step">
+          <div class="number-wrap"><div class="number">3</div></div>
+          <div class="step-art">📒</div>
+          <div class="step-content">
+            <h2>Tìm lại bạn cũ</h2>
+            <p>Rà soát xem còn bạn nào chưa vào nhóm, ai có số điện thoại/Zalo/Facebook thì kết nối thêm.</p>
+          </div>
+          <div class="side-icon">💌</div>
+        </div>
+
+        <div class="step">
+          <div class="number-wrap"><div class="number">4</div></div>
+          <div class="step-art">🗓️</div>
+          <div class="step-content">
+            <h2>Hỏi ngày mọi người đi được</h2>
+            <p>Đưa ra vài ngày phù hợp để cả lớp chọn, ngày nào đông người rảnh nhất thì ưu tiên.</p>
+          </div>
+          <div class="side-icon">✅</div>
+        </div>
+
+        <div class="step">
+          <div class="number-wrap"><div class="number">5</div></div>
+          <div class="step-art">🔎</div>
+          <div class="step-content">
+            <h2>Nắm thêm thông tin thực tế</h2>
+            <p>Theo dõi thông báo từ trường hoặc buổi họp để biết lớp mình cần chuẩn bị gì.</p>
+          </div>
+          <div class="side-icon">✈️</div>
+        </div>
+
+        <div class="step">
+          <div class="number-wrap"><div class="number">6</div></div>
+          <div class="step-art">💬</div>
+          <div class="step-content">
+            <h2>Báo lại cho cả lớp</h2>
+            <p>Tóm tắt ngắn gọn để mọi người dễ theo dõi, không bị trôi tin nhắn.</p>
+          </div>
+          <div class="side-icon">💭</div>
+        </div>
+
+        <div class="step">
+          <div class="number-wrap"><div class="number">7</div></div>
+          <div class="step-art">📍</div>
+          <div class="step-content">
+            <h2>Chốt buổi gặp riêng</h2>
+            <p>Khi đã có ngày phù hợp, chốt giờ, địa điểm, số lượng và chi phí dự kiến.</p>
+          </div>
+          <div class="side-icon">📝</div>
+        </div>
+
+        <div class="step">
+          <div class="number-wrap"><div class="number">8</div></div>
+          <div class="step-art">📸</div>
+          <div class="step-content">
+            <h2>Gặp nhau và giữ liên lạc</h2>
+            <p>Gặp cô, gặp bạn cũ, trò chuyện, chụp ảnh, lưu kỷ niệm và giữ nhóm lớp lâu dài.</p>
+          </div>
+          <div class="side-icon">❤️</div>
+        </div>
+      </section>
+
+      <section class="outcome-box" id="huong-toi" aria-labelledby="outcome-title">
+        <div class="section-label" id="outcome-title">Điều mình hướng tới</div>
+        <div class="outcome-grid">
+          <div class="outcome">
+            <div class="icon-circle">☑️</div>
+            <strong>Thông tin<br />rõ ràng</strong>
+          </div>
+          <div class="outcome">
+            <div class="icon-circle">👨‍👩‍👧‍👦</div>
+            <strong>Nhiều bạn<br />sắp xếp đi được</strong>
+          </div>
+          <div class="outcome">
+            <div class="icon-circle">😊</div>
+            <strong>Buổi gặp<br />vui và ấm cúng</strong>
+          </div>
+          <div class="outcome">
+            <div class="icon-circle">💞</div>
+            <strong>Lớp mình kết nối<br />lại lâu dài</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing-box" aria-label="Liên kết nhanh">
+        <h2>Đi tiếp ở đâu?</h2>
+        <p>
+          Sau khi xem xong quy trình này, mọi người có thể quay lại trang chính để xem thêm kỷ niệm, hình ảnh và những lời nhắn gửi của lớp.
+        </p>
+        <div class="quick-links">
+          <a href="https://d2ngochoi.github.io/d2-ngoc-hoi-2008-2011/">Trang chính D2</a>
+          <a href="https://d2ngochoi.github.io/d2-ngoc-hoi-2008-2011/#video-ky-niem">Video kỷ niệm</a>
+          <a href="https://d2ngochoi.github.io/d2-ngoc-hoi-2008-2011/#video-ky-niem">Gửi lời nhắn</a>
+        </div>
+      </section>
+
+      <p class="small-note">
+        Trang nhỏ này được tạo để lớp D2 dễ theo dõi và cùng nhau chuẩn bị cho ngày trở về.
+      </p>
+    </article>
+  </main>
+
+  <script>
+    const steps = document.querySelectorAll('.step');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion) {
+      steps.forEach((step) => step.classList.add('is-visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18 });
+
+      steps.forEach((step, index) => {
+        step.style.transitionDelay = `${index * 70}ms`;
+        observer.observe(step);
+      });
+    }
+  </script>
+</body>
+</html>
